@@ -12,3 +12,12 @@ revenueCard.innerHTML =
 <p>$0</p>;
 
 dashboard.appendChild(revenueCard);
+
+// Task 2 Working with NodeLists and Arrays
+var metricCards = document.querySelectorAll(`.metriccard`);
+var metricCardsArray = Array.from(metricCards);
+
+metricCardsArray.forEach(function(card) {
+    card.innerHTML += ` - Updated`;
+    card.computedStyleMap.backgroundColor = `#f0f0f0`;
+});
