@@ -35,3 +35,18 @@ function removeChild(Reject) { // Removing unwanted elements
 }
 
 // Task 4 Handling Event Bubbling
+const customerSection = document.getElementById("customerSection"); // Parent container to Events
+
+//Attach click event listeners to the parent container.
+customerSection.addEventListener("click", (event) => {
+  console.log("Customer section clicked"); // Inputing Customer section
+});
+
+// Editting Events
+const customerCards = document.querySelectorAll(".customer-card"); // Multi elements with class customer-card
+  card.addEventListener("click", (event) => {
+    console.log("Customer card clicked"); // Inputing Customer Section
+
+// Preventing 
+    event.stopPropagation();
+});
