@@ -8,8 +8,7 @@ revenueCard.setAttribute(`class`, `metric-card`);
 revenueCard.setAttribute(`id`, `revenueCard`);
 
 revenueCard.innerHTML = 
-<h3>revenue</h3>;
-<p>$0</p>;
+"<h3>revenue</h3><p>$0</p>";
 
 dashboard.appendChild(revenueCard);
 
@@ -23,42 +22,16 @@ metricCardsArray.forEach(function(card) {
 });
 
 // Task 3 Adding and Removing Items
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,
-initial-scale=1.0">
-    <title>Inventory Management</title</title>
-</head>
-<body>
-    <ul id="inventoryList"></ul>
-    <button onclick="addProduct()">Add Product</button>
+function addInventoryItem(Product) { // Adding a new product
+    const newProduct=document.createElement("li");
+    newProduct.textContent = Product;
+    newProduct.classList.add("product-item");
+    newProduct.addEventListener("click",removeChild);
+    inventoryList.appendChild(newProduct);
+}
 
-    <script>
-        function addProduct() {
-            var newProduct = document.createElement(`li`);
+function removeChild(Reject) { // Removing unwanted elements
+    Reject.target.remove();
+}
 
-            newProduct.setAttribute(`class`, `product-item`);
-            newProduct.setAttribute(`data-product-id`,
-`product-` + Date.now());
-
-            newProduct.innerText = `New Product`;
-            var inventoryList =
-document.getElementById(`inventoryList`);
-            inventoryList.appendChild(newProduct);
-
-            newProduct.addEventListener(`click`, function() {
-                removeProduct(newProduct);
-            });
-            }
-            
-            function removeProduct(productItem) {
-                var inventoryList = 
-document.getElementById(`inventoryList`);
-                inventoryList.removeChild(productItem);
-            });
-
-    </script>
-</body>
-</html>
+// Task 4 Handling Event Bubbling
